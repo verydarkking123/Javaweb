@@ -6,7 +6,16 @@ public class ParserFactory {
 	 * @param className used to get the instance
 	 * @return object the wanted instance of the FileParser
 	 */
-	public Object getReader(String className) {
-		return null;
+	public Object getParser(String className) {
+		Class<?> cls;
+		Object obj=null;
+		try {
+			cls = Class.forName(className);
+			obj = cls.newInstance();
+		} catch (ReflectiveOperationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return obj;
 	}
 }

@@ -12,7 +12,7 @@ public class CSVParserTest {
 	@Test
 	public void testParserData() {
 		ArrayList<String[]> content=cs.parserData("src/main/resources/de/exxcellent/challenge/weather.csv");
-		Assert.assertEquals(30, content.size());
+		Assert.assertEquals(31, content.size());
 	}
 
 }

@@ -33,6 +33,37 @@ public class ChanllengeOperation {
 	 * @return String of the day number -1 means error report
 	 */
 	private String getSolution(String dayColum, String MxTColum, String MnTColum, ArrayList<String[]> dataset) {
-		return null;
+		int line = -1; // the number of the row, which has Small Temperature Spread
+		int mxt = -1; // the number of the column, which is mxt
+		int mnt = -1; // the number of the column, which is mnt
+		int day = -1; // the number of the column, which is mnt
+		if (dataset.size() == 0)
+			return String.valueOf(-1);
+		for (int i = 0; i < dataset.get(0).length; i++) {
+			if (dataset.get(0)[i].equals(MxTColum))
+				mxt = i;
+			if (dataset.get(0)[i].equals(MnTColum))
+				mnt = i;
+			if (dataset.get(0)[i].equals(dayColum))
+				day = i;
+		}
+		if ((mxt == -1) || (mnt == -1) || (day == -1)) 
+			return String.valueOf(-1);
+		float min = Float.MAX_VALUE;
+		for (int i = 1; i < dataset.size(); i++) {
+			try {
+				float mnt_value = Float.parseFloat(dataset.get(i)[mnt]);
+				float mxt_value = Float.parseFloat(dataset.get(i)[mxt]);
+				if (min > Math.abs(mnt_value - mxt_value)) {
+					min = Math.abs(mnt_value - mxt_value);
+					line = i;
+				}
+
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+		}
+		// System.out.println(mnt+" "+mxt+" "+line);
+		return String.valueOf(dataset.get(line)[day]);
 	}
 }
