@@ -1,0 +1,20 @@
+App class : main entry @args first argument as the classname to be used in Parserfactory
+
+Logical class : handle the different logical server for the customer, such as the task 1 and 2
+
+ChanllengeOperation class : implement the required content of task 1 and 2, in my opionion, 
+the both task want has the same goal to get the absolute value bettween two column ABS(column1, column2).
+if we want to implement other function, just inherit this class.
+
+Result class : try to put the return value of the logical operation in a container, which is called class Result. Since we may not only print the result, but also handle with it.
+
+PaserFactory class : here use the java reflection. Using classname as argument, then we can dynamical choose the implementation of the FileParser. However,  the payoff is the running time
+
+FileParser interface : general function to parser a file
+
+CSVParser class : implementation of parsering the .csv file
+
+JSONParser class : to be implemented
+
+
+
