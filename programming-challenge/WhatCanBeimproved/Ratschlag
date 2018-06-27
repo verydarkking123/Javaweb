@@ -1,0 +1,3 @@
+Die Laufzeit kann reduziert werden, um die Aufgabe zu abschließen.
+
+Lössung: Zum Beispiel, Task2 wir müssen den Namen des Teams mit der geringsten Entfernung (absolute Differenz) zwischen "Ziele" und "Erlaubte Ziele" drucken. Wenn die Datei groß ist, sowie 2GB. Und es gibt 4 kunden. Alle Kunden wollen den Namen des Team kennenlernen. Dann wir werden viel Zeit verbrauchen, um ein gleiche Name in verschiedenen Abfragen zu finden. In meiner meinung, wir könnte das erstmal gefundene Ergibniss in XML-Datei speichern. Solange die abgefragte Datei nicht geändert wird, wir können direkt die XML-Datei abfragen, um das Ergebnis zu erhalten.
